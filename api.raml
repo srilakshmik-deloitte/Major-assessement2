@@ -1,0 +1,73 @@
+#%RAML 1.0
+types:
+  getdata:
+    properties:
+      id:
+        example: 2482
+        type: number
+        format: int
+      name:
+        example: Kartik kocchar
+        type: string
+      email:
+        example: kartik_kocchar@rutherford.io
+        type: string
+      status:
+        example: inactive
+        type: string
+  requestdata:
+    properties:
+      post_id:
+        example: 2003
+        type: number
+        format: int
+  responsedata:
+    properties:
+      Userdetails:
+        items:
+          properties:
+            post_id:
+              example: 2003
+              type: number
+              format: int
+            id:
+              example: "1978"
+              type: string
+            name:
+              example: Bhaaswar Pothuvaal IIT
+              type: string
+  milestone3get:
+    properties:
+      Name:
+        example: Gorakhanatha chaturvedi
+        type: string
+      status:
+        example: active
+        type: string
+      Gender:
+        example: female
+        type: string
+title: Majorassessment-srillakshmi
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+/milestone1:
+  get:
+    responses:
+      "200":
+        body:
+          application/json:
+            type: getdata
+/milestone2:
+  post:
+    responses:
+      "201":
+        body:
+          type: responsedata
+/milestone3:
+  get:
+    responses:
+      "200":
+        body:
+          type: milestone3get
